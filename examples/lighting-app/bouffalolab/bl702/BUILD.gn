@@ -115,6 +115,10 @@ bl702_executable("lighting_app") {
     defines += [ "BL706_IOT_DVK" ]
   }
 
+  if (defined(enable_cdc_module) && enable_cdc_module) {
+    defines += [ "CFG_USB_CDC_ENABLE" ]
+  }
+
   sources = [
     "${example_common_dir}/AppTask.cpp",
     "${example_common_dir}/ZclCallbacks.cpp",

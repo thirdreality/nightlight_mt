@@ -168,8 +168,17 @@ extern "C" void vApplicationGetTimerTaskMemory(StaticTask_t ** ppxTimerTaskTCBBu
     *pulTimerTaskStackSize = configMINIMAL_STACK_SIZE * 3 / 2;
 }
 
+#if defined(CFG_USB_CDC_ENABLE)
+extern "C" void usb_cdc_monitor(void);
+#endif
+
 #if (configUSE_TICK_HOOK != 0)
-extern "C" void vApplicationTickHook(void) {}
+extern "C" void vApplicationTickHook(void)
+{
+#if defined(CFG_USB_CDC_ENABLE)
+    usb_cdc_monitor();
+#endif
+}
 #endif
 
 extern "C" void vApplicationSleep(TickType_t xExpectedIdleTime) {}
@@ -335,6 +344,11 @@ extern "C" void START_ENTRY(void)
 #ifdef SYS_AOS_LOOP_ENABLE
     ChipLogProgress(NotSpecified, "Starting AOS loop Task");
     aos_loop_start();
+#else
+#if defined(CFG_USB_CDC_ENABLE)
+    extern void usb_cdc_start(int fd_console);
+    usb_cdc_start(-1);
+#endif
 #endif
 
     ChipLogProgress(NotSpecified, "Starting App Task");

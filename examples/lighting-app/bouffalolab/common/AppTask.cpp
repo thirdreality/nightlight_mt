@@ -661,8 +661,8 @@ void AppTask::TimerEventHandler(app_event_t event)
             }
             else
             {
-
-#ifdef BL706_NIGHT_LIGHT
+#if defined(BL706_NIGHT_LIGHT) && !defined(LED_BIN_RESET)
+// #ifdef BL706_NIGHT_LIGHT
 
                 if (GetAppTask().mButtonPressedTime)
                 {
@@ -691,7 +691,7 @@ void AppTask::TimerEventHandler(app_event_t event)
                     }
                 }
 #else
-#ifdef LED_BTN_RESET
+// #ifdef LED_BTN_RESET
                 if (ButtonPressed())
                 {
                     if (!GetAppTask().mIsFactoryResetIndicat &&
@@ -705,7 +705,7 @@ void AppTask::TimerEventHandler(app_event_t event)
                 {
                     GetAppTask().PostEvent(APP_EVENT_BTN_FACTORY_RESET_CANCEL);
                 }
-#endif
+// #endif
 #endif
             }
         }

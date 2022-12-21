@@ -52,7 +52,7 @@ template("bl702_sdk") {
   if (defined(invoker.enable_cdc_module)) {
     enable_cdc_module = invoker.enable_cdc_module
   }
-
+  
   config("${sdk_target_name}_config") {
     include_dirs = []
     if (defined(invoker.include_dirs)) {
@@ -336,6 +336,10 @@ template("bl702_sdk") {
       "BFLB_USE_ROM_DRIVER=1",
       "BFLB_USE_HAL_DRIVER=1",
     ]
+
+    if (enable_cdc_module) {
+      defines += [ "CFG_USB_CDC_ENABLE" ]
+    }
 
     sources = [
       "${bl702_sdk_root}/components/libc/newlibc/assert.c",
