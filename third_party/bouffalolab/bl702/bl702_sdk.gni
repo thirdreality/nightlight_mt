@@ -52,7 +52,7 @@ template("bl702_sdk") {
   if (defined(invoker.enable_cdc_module)) {
     enable_cdc_module = invoker.enable_cdc_module
   }
-  
+
   config("${sdk_target_name}_config") {
     include_dirs = []
     if (defined(invoker.include_dirs)) {

@@ -345,6 +345,11 @@ void AppTask::AppTaskMain(void * pvParameter)
 
             if (APP_EVENT_BTN_SHORT & appEvent)
             {
+#if CHIP_ENABLE_OPENTHREAD
+                if (!ConnectivityMgr().IsWiFiStationProvisioned()) {
+                    PrintOnboardingCodes(chip::RendezvousInformationFlags(chip::RendezvousInformationFlag::kBLE));
+                }
+#endif
                 LightingSetStatus(APP_EVENT_SYS_LIGHT_TOGGLE);
                 LightingUpdate(APP_EVENT_LIGHTING_GO_THROUGH);
             }
@@ -661,8 +666,8 @@ void AppTask::TimerEventHandler(app_event_t event)
             }
             else
             {
-#if defined(BL706_NIGHT_LIGHT) && !defined(LED_BIN_RESET)
-// #ifdef BL706_NIGHT_LIGHT
+
+#if defined (BL706_NIGHT_LIGHT) && ! defined (LED_BTN_RESET)
 
                 if (GetAppTask().mButtonPressedTime)
                 {
@@ -691,7 +696,6 @@ void AppTask::TimerEventHandler(app_event_t event)
                     }
                 }
 #else
-// #ifdef LED_BTN_RESET
                 if (ButtonPressed())
                 {
                     if (!GetAppTask().mIsFactoryResetIndicat &&
@@ -705,7 +709,6 @@ void AppTask::TimerEventHandler(app_event_t event)
                 {
                     GetAppTask().PostEvent(APP_EVENT_BTN_FACTORY_RESET_CANCEL);
                 }
-// #endif
 #endif
             }
         }

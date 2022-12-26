@@ -168,14 +168,11 @@ extern "C" void vApplicationGetTimerTaskMemory(StaticTask_t ** ppxTimerTaskTCBBu
     *pulTimerTaskStackSize = configMINIMAL_STACK_SIZE * 3 / 2;
 }
 
-#if defined(CFG_USB_CDC_ENABLE)
-extern "C" void usb_cdc_monitor(void);
-#endif
-
 #if (configUSE_TICK_HOOK != 0)
-extern "C" void vApplicationTickHook(void)
+extern "C" void vApplicationTickHook(void) 
 {
 #if defined(CFG_USB_CDC_ENABLE)
+    extern void usb_cdc_monitor(void);
     usb_cdc_monitor();
 #endif
 }
