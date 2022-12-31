@@ -116,7 +116,7 @@ or found under the tools directory of the project path.
 6. click Create & Download button
 7. wait until the progress bar is 100%, which means the burning is completed
 
-![](C:\Users\aibicn\AppData\Roaming\Typora\typora-user-images\image-20221230225038480.png)
+<img src="./README.assets/image-20221231132154337.png">
 
 
 
