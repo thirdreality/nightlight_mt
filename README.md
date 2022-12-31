@@ -96,7 +96,7 @@ at ./out directory
 
 
 
-# Burn firmware
+# Burn Firmware
 
 ### Get Burning Tool
 
@@ -122,12 +122,91 @@ or found under the tools directory of the project path.
 
 ### Burn BL706
 
+1. prepare a USB cable with one female end and one male end
+2. connect the lamp with a female USB port
+3. press and hold the key on the 706 lamp
+4. connect the male USB port to the USB interface of the computer
+5. then release the key to enter the burning mode
+6. run BLDevCube.exe ( at burning tool directory ) on Windows OS 
+7. Set parameters as shown in the following screenshot
+8. click Create & Download button
+9. wait until the progress bar is 100%, which means the burning is completed
+
+<img src="./README.assets/image-20221231151940933.png">
+                          
+
 
 
 # Control the Night Light
 
-### Use iPhone and HomePod mini
 
-### Factory Reset
 
-<!--(To be continued)-->
+## Use iPhone and HomePod mini
+
+- #### Prepare
+
+Upgrade the iPhone OS to 16.1.2 or higher
+
+Confirm that the App Home is installed on your phone
+
+Upgrade HomePod to version 16.1 or above
+
+
+
+- #### Bind iPhone and HomePod
+
+1. Plug the HomePod mini or HomePod into the power supply. Wait for the prompt to sound and the indicator on the HomePod mini or the top of the HomePod starts flashing white.
+2. Unlock your iPhone or iPad and place it close to the HomePod mini or HomePod. When "Settings" appears on the device screen, tap this button.
+3. When the system prompts you to place the HomePod mini or HomePod in the center of the iPhone or iPad viewfinder, follow the prompts to complete pairing. If you can't use the camera, please click "Enter password manually", and Siri will respond with a four digit password. Please enter this password into your device.
+4. Follow the onscreen instructions to select your settings. After setting up, you can also customize and manage all the HomePod mini or HomePod settings in the Home app.
+5. Wait for HomePod mini or HomePod to finish setting, then tap Finish.
+
+
+
+- #### Add a Night Light in Home
+
+1. BL602 or BL706 light is connected to the computer
+
+2. UART baud rate is set to 2000000, and power on again
+
+3. From the uart log, copy URL similar to the following:
+
+    `https://project-chip.github.io/connectedhomeip/qrcode.html?data=MT%3A6FCJ142C00KA0648G00`
+
+4. Open the URL above with a browser, and normally, there will be a QR code on the screen
+
+5. Open the mobile phone Home App, click the "+" in the upper right corner, and select "Add accessories" from the pop-up menu
+
+6. Scan the QR code of the night light on the pop-up interface, and add it according to the prompts. You can customize the location and name of the accessories at Home
+
+7. Wait for the configuration to be completed, and there will be a new night light in Home
+
+8. You can open the accessories interface to control the night light through touch, or control the light through voice interaction, such as "turn on all lights"
+
+
+
+#### Reset Apple HomePod
+
+Power on the loudspeaker after power off for 10s
+
+Wait for 5s after power on, press the middle position of the speaker with your index finger
+
+Release after you hear 3 beeps, according to the speaker prompts, and there will be a chime
+
+#### Remove Accessories from Home
+
+Open the Home App and enter "My Home"
+
+Tap the accessory to be deleted to open the accessory details page
+
+Slide the screen to the bottom, select "Remove accessories", and confirm
+
+For HomePod, select "Restore HomePod..." and then "Remove Accessories"
+
+
+
+## Factory Reset
+
+Long press the key for about 7s, then release the key
+During the process, the light first turns on and then off
+Until the yellow light comes on, indicating that factory reset OK
