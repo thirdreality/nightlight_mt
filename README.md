@@ -108,11 +108,11 @@ or found under the tools directory of the project path.
 
 ### Burn BL602
 
-1. press and hold the key on the 602 lamp
-2. press the reset button on the debugging board 
-3. release the lamp key to enter the burning mode
-4. run BLDevCube.exe ( at burning tool directory ) on Windows OS 
-5. Set parameters as shown in the following screenshot
+1. press and hold the key on the Night Light’s pinhole
+2. press the reset button on the debugging board
+3. release the Night Light’s key to enter the burning mode
+4. run BLDevCube.exe ( at burning tool directory ) on Windows OS
+5. Set parameters as shown in the following screenshot (get partition table, dts and boot2 from the burning tool, firmware from the build)
 6. click Create & Download button
 7. wait until the progress bar is 100%, which means the burning is completed
 
@@ -123,12 +123,12 @@ or found under the tools directory of the project path.
 ### Burn BL706
 
 1. prepare a USB cable with one female end and one male end
-2. connect the lamp with a female USB port
-3. press and hold the key on the 706 lamp
+2. connect the Night Light with a female USB port
+3. press and hold the key on the Night Light’s pinhole
 4. connect the male USB port to the USB interface of the computer
-5. then release the key to enter the burning mode
+5. then release the Night Light’s key to enter the burning mode
 6. run BLDevCube.exe ( at burning tool directory ) on Windows OS 
-7. Set parameters as shown in the following screenshot
+7. Set parameters as shown in the following screenshot (get partition table and firmware from the build, dts from the burning tool)
 8. click Create & Download button
 9. wait until the progress bar is 100%, which means the burning is completed
 
@@ -143,7 +143,7 @@ or found under the tools directory of the project path.
 
 ## Use iPhone and HomePod mini
 
-- #### Prepare
+#### Prepare
 
 Upgrade the iPhone OS to 16.1.2 or higher
 
@@ -153,7 +153,7 @@ Upgrade HomePod to version 16.1 or above
 
 
 
-- #### Bind iPhone and HomePod
+#### Bind iPhone and HomePod
 
 1. Plug the HomePod mini or HomePod into the power supply. Wait for the prompt to sound and the indicator on the HomePod mini or the top of the HomePod starts flashing white.
 2. Unlock your iPhone or iPad and place it close to the HomePod mini or HomePod. When "Settings" appears on the device screen, tap this button.
@@ -163,7 +163,7 @@ Upgrade HomePod to version 16.1 or above
 
 
 
-- #### Add a Night Light in Home
+#### Add a Night Light in Home
 
 1. BL602 or BL706 light is connected to the computer
 
@@ -172,6 +172,8 @@ Upgrade HomePod to version 16.1 or above
 3. From the uart log, copy URL similar to the following:
 
     `https://project-chip.github.io/connectedhomeip/qrcode.html?data=MT%3A6FCJ142C00KA0648G00`
+
+    <u>*Note: For BL706 Night Light you can print the URL multiple times by short pressing the key*</u>
 
 4. Open the URL above with a browser, and normally, there will be a QR code on the screen
 
@@ -208,5 +210,7 @@ For HomePod, select "Restore HomePod..." and then "Remove Accessories"
 ## Factory Reset
 
 Long press the key for about 7s, then release the key
+
 During the process, the light first turns on and then off
+
 Until the yellow light comes on, indicating that factory reset OK
