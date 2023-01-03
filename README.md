@@ -31,10 +31,10 @@ these sensors, developers can directly develop practical night light lighting pr
 Third Reality  will open source all relevant code at an appropriate time to facilitate 
 developers. 
 
-Third Reality keep updating the software and hardware of the existing Matter 
-products, and provide users with more reference examples (in fact, it is a product with 
+Third Reality keeps updating the software and hardware of the existing Matter 
+products, and provides users with more reference examples (in fact, it is a product with 
 complete functions, and it will be easier for users to modify the code on this basis, 
-and can achieve full customization functions).  At the same time, develop new products 
+and can achieve full customization functions).  At the same time, develops new products 
 that support Matter standard.
 
 Third Reality will pay attention to the progress of the Matter and upgrade with it 
@@ -207,7 +207,57 @@ For HomePod, select "Restore HomePod..." and then "Remove Accessories"
 
 
 
-## Factory Reset
+
+
+## Use Android Phone and Google Nest
+
+#### Prepare
+
+A  Google Nest (speaker or display)
+Latest version of the Google Home app
+A Google Account
+
+A mobile phone or tablet that:
+*Has Android 8.0 or later*
+*Works with 2.4 GHz and 5 GHz Wi-Fi network (a WPA-2 Enterprise network won't work)*
+*Has Bluetooth turned on*
+*An Internet connection and secure wireless network*
+
+#### Set up Google Nest
+
+Open the Google Home app (upgrade to the latest version first) on your mobile phone
+
+Recommended to set Google Nest as the first device
+
+Tap to select Devices enter the settings screen
+
+Tap the + Add icon, Set up a device (set up a new device or add an existing device or service to your home)
+
+Choose a home (you will be able to control the devices and services in this home) , then tap Next, Enter Looking for devices...
+
+or Choose  Add another home, then tap Next,  enter a Home nickname and address
+
+Wait a moment till you see " Nest Hub found" result text, then Scan the QR code on the Google Nest screen
+
+Tab Connect when "Connect to device"  box pops up
+
+Complete the setting of Google Nest
+
+#### Add a Night Light in Home
+
+Add a night light in Google Home, just like adding a night light in Apple Home above.
+
+#### Reset Google Nest
+
+If the device has been used before, you can factory reset it as follows:
+
+Press and hold V+V - key simultaneously for 10 seconds
+
+
+
+
+
+## Factory Reset Night Light
 
 Long press the key for about 7s, then release the key
 
