@@ -36,13 +36,17 @@
  *
  * This option is for testing only and should be disabled in production releases.
  */
+#include <stdint.h>
+extern uint16_t discriminator_mac_g;
+#define DISCRIMINATOR_MAC (discriminator_mac_g-1)
 #define CHIP_DEVICE_CONFIG_ENABLE_TEST_DEVICE_IDENTITY 34
 
 // Use a default pairing code if one hasn't been provisioned in flash.
 #ifndef CHIP_DEVICE_CONFIG_USE_TEST_SETUP_PIN_CODE
 #define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_PIN_CODE 20202021
 #endif
-#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 0xF00
+// #define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR 0xF00
+#define CHIP_DEVICE_CONFIG_USE_TEST_SETUP_DISCRIMINATOR DISCRIMINATOR_MAC
 
 // For convenience, Chip Security Test Mode can be enabled and the
 // requirement for authentication in various protocols can be disabled.

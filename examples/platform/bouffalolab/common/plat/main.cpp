@@ -55,6 +55,7 @@ extern "C" {
 #include <hosal_uart.h>
 
 #include "board.h"
+#include "bl_wifi.h"
 }
 
 using namespace ::chip;
@@ -169,7 +170,7 @@ extern "C" void vApplicationGetTimerTaskMemory(StaticTask_t ** ppxTimerTaskTCBBu
 }
 
 #if (configUSE_TICK_HOOK != 0)
-extern "C" void vApplicationTickHook(void) 
+extern "C" void vApplicationTickHook(void)
 {
 #if defined(CFG_USB_CDC_ENABLE)
     extern void usb_cdc_monitor(void);
@@ -329,6 +330,27 @@ extern "C" void app_init(void)
 #endif
 }
 
+uint16_t discriminator_mac_g;
+
+extern "C" void get_mac_init(void)
+{
+    uint8_t mac[6];
+    int ret;
+
+    memset(mac, 0, sizeof(mac));
+    bl_wifi_mac_addr_get(mac);
+    ChipLogProgress(NotSpecified, " get MAC #### %02X:%02X:%02X:%02X:%02X:%02X ####\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+
+    discriminator_mac_g = ((mac[4] & 0x0F) << 8) + mac[5] + 1;
+
+    *((uint8_t*)&discriminator_mac_g+1) ^= *(uint8_t*)&discriminator_mac_g;
+    discriminator_mac_g &= 0xFFF;
+    while(++discriminator_mac_g<3);
+    while(--discriminator_mac_g>0xFFF);
+
+    ChipLogProgress(NotSpecified, "######## discriminator = %03X ########\r\n", discriminator_mac_g);
+}
+
 extern "C" void START_ENTRY(void)
 {
     app_init();
@@ -349,6 +371,7 @@ extern "C" void START_ENTRY(void)
 #endif
 
     ChipLogProgress(NotSpecified, "Starting App Task");
+    get_mac_init();
     StartAppTask();
 
     ChipLogProgress(NotSpecified, "Starting OS Scheduler...");
