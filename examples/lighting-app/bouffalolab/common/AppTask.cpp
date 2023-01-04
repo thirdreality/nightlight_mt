@@ -72,6 +72,9 @@
 #include "uart.h"
 #endif
 
+#include <stdint.h>
+extern uint16_t discriminator_mac_g;
+
 extern "C" {
 #include "board.h"
 #include <bl_gpio.h>
@@ -348,6 +351,7 @@ void AppTask::AppTaskMain(void * pvParameter)
 #if CHIP_ENABLE_OPENTHREAD
                 if (!ConnectivityMgr().IsWiFiStationProvisioned()) {
                     PrintOnboardingCodes(chip::RendezvousInformationFlags(chip::RendezvousInformationFlag::kBLE));
+                    ChipLogProgress(NotSpecified, "######## discriminator = %03X ########\r\n", discriminator_mac_g);
                 }
 #endif
                 LightingSetStatus(APP_EVENT_SYS_LIGHT_TOGGLE);

@@ -37,9 +37,10 @@ extern "C" {
 #ifdef BL702_ENABLE
 #include <bl702_glb.h>
 #include <bl702_hbn.h>
+#include "bl_wireless.h"
 #elif defined(BL602_ENABLE)
 #include <wifi_mgmr_ext.h>
-
+#include "bl_wifi.h"
 #endif
 #include <bl_irq.h>
 #include <bl_rtc.h>
@@ -55,7 +56,6 @@ extern "C" {
 #include <hosal_uart.h>
 
 #include "board.h"
-#include "bl_wifi.h"
 }
 
 using namespace ::chip;
@@ -331,6 +331,7 @@ extern "C" void app_init(void)
 }
 
 uint16_t discriminator_mac_g;
+uint32_t setup_pin_code_mac_g;
 
 extern "C" void get_mac_init(void)
 {
@@ -338,13 +339,30 @@ extern "C" void get_mac_init(void)
     int ret;
 
     memset(mac, 0, sizeof(mac));
+#ifdef BL602_ENABLE
     bl_wifi_mac_addr_get(mac);
+#elif defined(BL702_ENABLE)
+    bl_wireless_mac_addr_get(mac);
+#endif
     ChipLogProgress(NotSpecified, " get MAC #### %02X:%02X:%02X:%02X:%02X:%02X ####\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+    log_info(" get MAC #### %02X:%02X:%02X:%02X:%02X:%02X ####\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 
+    setup_pin_code_mac_g = (((mac[0] << 8) + mac[1]) ^ ((mac[1] << 8) + mac[2])) & 0x7FFF;
+    setup_pin_code_mac_g <<= 12;
+    setup_pin_code_mac_g += (mac[3] << 4) + ((mac[4] & 0xF0) >> 4) + 1;
     discriminator_mac_g = ((mac[4] & 0x0F) << 8) + mac[5] + 1;
 
     *((uint8_t*)&discriminator_mac_g+1) ^= *(uint8_t*)&discriminator_mac_g;
+    *((uint8_t*)&setup_pin_code_mac_g+1) ^= *(uint8_t*)&setup_pin_code_mac_g;
+    *((uint8_t*)&setup_pin_code_mac_g+2) ^= *(uint8_t*)&setup_pin_code_mac_g;
+    *((uint8_t*)&setup_pin_code_mac_g+3) ^= *(uint8_t*)&setup_pin_code_mac_g;
     discriminator_mac_g &= 0xFFF;
+    setup_pin_code_mac_g &= 0x7FFFFFF;
+    while(++discriminator_mac_g<3);
+    while(++setup_pin_code_mac_g<3);
+    while(--discriminator_mac_g>0xFFF);
+    while(--setup_pin_code_mac_g>0x7FFFFFF);
+    discriminator_mac_g = (setup_pin_code_mac_g % discriminator_mac_g);
     while(++discriminator_mac_g<3);
     while(--discriminator_mac_g>0xFFF);
 

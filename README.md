@@ -214,13 +214,19 @@ For HomePod, select "Restore HomePod..." and then "Remove Accessories"
 #### Prepare
 
 A  Google Nest (speaker or display)
+
 Latest version of the Google Home app
+
 A Google Account
 
 A mobile phone or tablet that:
+
 *Has Android 8.0 or later*
+
 *Works with 2.4 GHz and 5 GHz Wi-Fi network (a WPA-2 Enterprise network won't work)*
+
 *Has Bluetooth turned on*
+
 *An Internet connection and secure wireless network*
 
 #### Set up Google Nest
