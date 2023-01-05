@@ -19,12 +19,12 @@ certification.
 # Third Reality Matter Projects
 
 Third Reality  has actively participated in Matter. By the end of 2022, it has just 
-developed two night light products, providing open source code and hardware 
-for interested developers to download code, compile and burn firmware 
-to the light for testing. Users can voice control lights (switch lights, adjust colors, 
-and brightness) on HomePod mini, HomePod, Google Nest and other speakers that 
-support Matter. Needless to say, users can also control these lights through 
-their mobile phones.
+developed two night light products, providing open source code and hardware for 
+interested developers to download code, compile and burn firmware to the light 
+for testing. Users can voice control lights (switch lights, adjust colors, and brightness) 
+on HomePod mini, HomePod, Google Nest, Amazon Echo and other speakers that 
+support Matter. Needless to say, users can also control these lights through their 
+mobile phones.
 
 These two lamps have PIR motion sensor and light sensor inside. With the help of 
 these sensors, developers can directly develop practical night light lighting products. 
@@ -207,8 +207,6 @@ For HomePod, select "Restore HomePod..." and then "Remove Accessories"
 
 
 
-
-
 ## Use Android Phone and Google Nest
 
 #### Prepare
@@ -260,6 +258,44 @@ If the device has been used before, you can factory reset it as follows:
 Press and hold V+V - key simultaneously for 10 seconds
 
 
+
+## Use Amazon Echo and Alexa
+
+Matter-enabled Amazon Echo devices have built-in software to connect and control Matter smart home devices seamlessly. After a customer sets up an Echo, they can connect their devices by saying, "Alexa, discover my devices", or if you like, by adding the device in the Alexa app as follows: 
+
+
+
+1. Install Amazon Alexa app on Android mobile phone
+
+2. Set up your Echo speaker according to instructions
+
+3. Open the Alexa app and enter "Device Settings" screen
+
+4. Tap the + sign in the upper right corner to select "Add Device" from the pop-up screen
+
+5. Enter the next screen SETUP and select "Connect your Matter Device"
+
+   "Control your Matter device with Alexa", Next
+
+   "Does your device have a Matter logo ?", Yes
+
+6. "Locate a QR code shown for your device", tap "Scan Qr Code" at the bottom of the screen
+
+7. "Allow Permission:  Bluetooth, Camera", Next 
+
+8. "Allow Amazon Alexa to take pictures and record video ?"
+
+   select "While using the app", then Scan the QR code for Matter Device
+
+   Enter "Looking for your device" screen, wait a moment
+
+   when you see "Connect device to Wi-Fi" select the hotspot your phone is using
+
+9. "Device found and connected", tap "Done"
+
+10. Enter the LIGHTS screen, you can control the lights added above, or voice control lights
+
+    (Currently, it is recommended to use alexa control BL602)
 
 
 
