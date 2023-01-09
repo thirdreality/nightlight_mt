@@ -139,6 +139,10 @@ or found under the tools directory of the project path.
 
 From this path: `"./nightlight_mt/docs_3r/firmware"` (including the `bl602` and `bl706` subdirectories), you can download the compiled nightlight bin and the dependent firmware, and directly burn and test them without compiling them yourself.
 
+### Hardware Scheme for Download
+
+From this path: `"./nightlight_mt/docs_3r/hardware"`, you can download the hardware implementation schematic, refer to the scheme, and conduct in-depth research against the code.
+
 
 
 # Control the Night Light
