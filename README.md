@@ -135,6 +135,10 @@ or found under the tools directory of the project path.
 <img src="./README.assets/image-20221231151940933.png">
                           
 
+### Firmware for Download
+
+From this path: `"./nightlight_mt/docs_3r/firmware"` (including the `bl602` and `bl706` subdirectories), you can download the compiled nightlight bin and the dependent firmware, and directly burn and test them without compiling them yourself.
+
 
 
 # Control the Night Light
