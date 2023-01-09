@@ -41,6 +41,8 @@ Third Reality will pay attention to the progress of the Matter and upgrade with 
 synchronously, so that users can experience the latest version of Matter earlier. 
 Matter is as vibrant as the Amazon rainforest. Let's go ahead.
 
+<img src="./README.assets/System_Block_Diagram.jpg">
+
 
 
 # Development Environment
