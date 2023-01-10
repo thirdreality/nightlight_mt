@@ -3,35 +3,36 @@ Table of Contents
 
 * [What is Matter?](#what-is-matter)
 * [Third Reality Matter Projects](#third-reality-matter-projects)
+* [Hardware Scheme](#hardware-scheme)
 * [Development Environment](#development-environment)
-      * [Recommended OS](#recommended-os)
-      * [Install Dependencies](#install-dependencies)
-      * [Download Code](#download-code)
-      * [Install Bouffalo Lab SDK](#install-bouffalo-lab-sdk)
-      * [Set Environment Variables](#set-environment-variables)
-      * [Compile BL602 ( main branch)](#compile-bl602--main-branch)
-      * [Compile BL706 ( main branch)](#compile-bl706--main-branch)
-      * [Compiled Results](#compiled-results)
+   * [Recommended OS](#recommended-os)
+   * [Install Dependencies](#install-dependencies)
+   * [Download Code](#download-code)
+   * [Install Bouffalo Lab SDK](#install-bouffalo-lab-sdk)
+   * [Set Environment Variables](#set-environment-variables)
+   * [Compile BL602 ( main branch)](#compile-bl602--main-branch)
+   * [Compile BL706 ( main branch)](#compile-bl706--main-branch)
+   * [Compiled Results](#compiled-results)
 * [Burn Firmware](#burn-firmware)
-      * [Get Burning Tool](#get-burning-tool)
-      * [Burn BL602](#burn-bl602)
-      * [Burn BL706](#burn-bl706)
-      * [Firmware for Download](#firmware-for-download)
-      * [Hardware Scheme for Download](#hardware-scheme-for-download)
+   * [Get Burning Tool](#get-burning-tool)
+   * [Burn BL602](#burn-bl602)
+   * [Burn BL706](#burn-bl706)
+   * [Firmware for Download](#firmware-for-download)
 * [Control the Night Light](#control-the-night-light)
    * [Use iPhone and HomePod mini](#use-iphone-and-homepod-mini)
-         * [Prepare](#prepare)
-         * [Bind iPhone and HomePod](#bind-iphone-and-homepod)
-         * [Add a Night Light in Home](#add-a-night-light-in-home)
-         * [Reset Apple HomePod](#reset-apple-homepod)
-         * [Remove Accessories from Home](#remove-accessories-from-home)
+      * [Prepare](#prepare)
+      * [Bind iPhone and HomePod](#bind-iphone-and-homepod)
+      * [Add a Night Light in Home](#add-a-night-light-in-home)
+      * [Reset Apple HomePod](#reset-apple-homepod)
+      * [Remove Accessories from Home](#remove-accessories-from-home)
    * [Use Android Phone and Google Nest](#use-android-phone-and-google-nest)
-         * [Prepare](#prepare-1)
-         * [Set up Google Nest](#set-up-google-nest)
-         * [Add a Night Light in Home](#add-a-night-light-in-home-1)
-         * [Reset Google Nest](#reset-google-nest)
+      * [Prepare](#prepare-1)
+      * [Set up Google Nest](#set-up-google-nest)
+      * [Add a Night Light in Home](#add-a-night-light-in-home-1)
+      * [Reset Google Nest](#reset-google-nest)
    * [Use Amazon Echo and Alexa](#use-amazon-echo-and-alexa)
    * [Factory Reset Night Light](#factory-reset-night-light)
+
 
 
 # What is Matter?
@@ -77,7 +78,12 @@ Third Reality will pay attention to the progress of the Matter and upgrade with 
 synchronously, so that users can experience the latest version of Matter earlier. 
 Matter is as vibrant as the Amazon rainforest. Let's go ahead.
 
+
+
+# Hardware Scheme
 <img src="./README.assets/System_Block_Diagram.jpg">
+
+From this path: `"./nightlight_mt/docs_3r/hardware"`, you can download the hardware implementation schematic, refer to the scheme, and conduct in-depth research against the code.
 
 
 
@@ -85,11 +91,11 @@ Matter is as vibrant as the Amazon rainforest. Let's go ahead.
 
 
 
-### Recommended OS
+## Recommended OS
 
 `Ubuntu` 22.04 LTS
 
-### Install Dependencies
+## Install Dependencies
 
 `sudo apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev \`
 
@@ -97,7 +103,7 @@ Matter is as vibrant as the Amazon rainforest. Let's go ahead.
 
 ​    `python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev`
 
-### Download Code
+## Download Code
 
 `git clone https://github.com/thirdreality/nightlight_mt.git`
 
@@ -110,25 +116,25 @@ Matter is as vibrant as the Amazon rainforest. Let's go ahead.
 If this script says the environment is out of date, it can be updated by running:
 `source ./scripts/bootstrap.sh` 
 
-### Install Bouffalo Lab SDK
+## Install Bouffalo Lab SDK
 
 `cd third_party/bouffalolab/repo`
 
 `sudo bash scripts/setup.sh`
 
-### Set Environment Variables
+## Set Environment Variables
 
 `export BOUFFALOLAB_SDK_ROOT=/opt/bouffalolab_sdk`
 
-### Compile BL602 ( main branch)
+## Compile BL602 ( main branch)
 
 `./scripts/build/build_examples.py --target bouffalolab-bl602-iot-matter-v1-light build`
 
-### Compile BL706 ( main branch)
+## Compile BL706 ( main branch)
 
 `./scripts/examples/gn_bouffalolab_example.sh lighting-app out/bouffalolab-bl706-night-light-light BL706-NIGHT-LIGHT module_type=BL706C-22 enable_cdc_module=true`
 
-### Compiled Results
+## Compiled Results
 
 at ./out directory
 
@@ -136,7 +142,7 @@ at ./out directory
 
 # Burn Firmware
 
-### Get Burning Tool
+## Get Burning Tool
 
 The burning tool "**Bouffalo Lab Dev Cube**" can be downloaded from the bouffalo official website 
 
@@ -144,7 +150,7 @@ https://dev.bouffalolab.com/download
 
 or found under the tools directory of the project path.
 
-### Burn BL602
+## Burn BL602
 
 1. press and hold the key on the Night Light’s pinhole
 2. press the reset button on the debugging board
@@ -157,8 +163,7 @@ or found under the tools directory of the project path.
 <img src="./README.assets/image-20221231132154337.png">
 
 
-
-### Burn BL706
+## Burn BL706
 
 1. prepare a USB cable with one female end and one male end
 2. connect the Night Light with a female USB port
@@ -173,13 +178,9 @@ or found under the tools directory of the project path.
 <img src="./README.assets/image-20221231151940933.png">
                           
 
-### Firmware for Download
+## Firmware for Download
 
 From this path: `"./nightlight_mt/docs_3r/firmware"` (including the `bl602` and `bl706` subdirectories), you can download the compiled nightlight bin and the dependent firmware, and directly burn and test them without compiling them yourself.
-
-### Hardware Scheme for Download
-
-From this path: `"./nightlight_mt/docs_3r/hardware"`, you can download the hardware implementation schematic, refer to the scheme, and conduct in-depth research against the code.
 
 
 
@@ -189,7 +190,7 @@ From this path: `"./nightlight_mt/docs_3r/hardware"`, you can download the hardw
 
 ## Use iPhone and HomePod mini
 
-#### Prepare
+### Prepare
 
 Upgrade the iPhone OS to 16.1.2 or higher
 
@@ -198,8 +199,7 @@ Confirm that the App Home is installed on your phone
 Upgrade HomePod to version 16.1 or above
 
 
-
-#### Bind iPhone and HomePod
+### Bind iPhone and HomePod
 
 1. Plug the HomePod mini or HomePod into the power supply. Wait for the prompt to sound and the indicator on the HomePod mini or the top of the HomePod starts flashing white.
 2. Unlock your iPhone or iPad and place it close to the HomePod mini or HomePod. When "Settings" appears on the device screen, tap this button.
@@ -208,8 +208,7 @@ Upgrade HomePod to version 16.1 or above
 5. Wait for HomePod mini or HomePod to finish setting, then tap Finish.
 
 
-
-#### Add a Night Light in Home
+### Add a Night Light in Home
 
 1. BL602 or BL706 light is connected to the computer
 
@@ -232,8 +231,7 @@ Upgrade HomePod to version 16.1 or above
 8. You can open the accessories interface to control the night light through touch, or control the light through voice interaction, such as "turn on all lights"
 
 
-
-#### Reset Apple HomePod
+### Reset Apple HomePod
 
 Power on the loudspeaker after power off for 10s
 
@@ -241,7 +239,8 @@ Wait for 5s after power on, press the middle position of the speaker with your i
 
 Release after you hear 3 beeps, according to the speaker prompts, and there will be a chime
 
-#### Remove Accessories from Home
+
+### Remove Accessories from Home
 
 Open the Home App and enter "My Home"
 
@@ -255,7 +254,7 @@ For HomePod, select "Restore HomePod..." and then "Remove Accessories"
 
 ## Use Android Phone and Google Nest
 
-#### Prepare
+### Prepare
 
 A  Google Nest (speaker or display)
 
@@ -273,7 +272,7 @@ A mobile phone or tablet that:
 
 *An Internet connection and secure wireless network*
 
-#### Set up Google Nest
+### Set up Google Nest
 
 Open the Google Home app (upgrade to the latest version first) on your mobile phone
 
@@ -293,11 +292,11 @@ Tab Connect when "Connect to device"  box pops up
 
 Complete the setting of Google Nest
 
-#### Add a Night Light in Home
+### Add a Night Light in Home
 
 Add a night light in Google Home, just like adding a night light in Apple Home above.
 
-#### Reset Google Nest
+### Reset Google Nest
 
 If the device has been used before, you can factory reset it as follows:
 
@@ -308,7 +307,6 @@ Press and hold V+V - key simultaneously for 10 seconds
 ## Use Amazon Echo and Alexa
 
 Matter-enabled Amazon Echo devices have built-in software to connect and control Matter smart home devices seamlessly. After a customer sets up an Echo, they can connect their devices by saying, "Alexa, discover my devices", or if you like, by adding the device in the Alexa app as follows: 
-
 
 
 1. Install Amazon Alexa app on Android mobile phone
@@ -342,7 +340,6 @@ Matter-enabled Amazon Echo devices have built-in software to connect and control
 10. Enter the LIGHTS screen, you can control the lights added above, or voice control lights
 
     (Currently, it is recommended to use alexa control BL602)
-
 
 
 ## Factory Reset Night Light
