@@ -355,4 +355,4 @@ Until the yellow light comes on, indicating that factory reset OK
 
 # Questions and Answers
 
-If you encounter any inconvenience in using our night light products, please refer to <a href="https://github.com/thirdreality/nightlight_mt/docs_3r/FAQ/FAQ_3R.md">FAQ</a> for help.
+If you encounter any inconvenience in using our night light products, please refer to <a href="https://github.com/thirdreality/nightlight_mt/blob/main/docs_3r/FAQ/FAQ_3R.md">FAQ</a> for help.
