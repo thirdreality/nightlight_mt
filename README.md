@@ -30,8 +30,9 @@ Table of Contents
       * [Set up Google Nest](#set-up-google-nest)
       * [Add a Night Light in Home](#add-a-night-light-in-home-1)
       * [Reset Google Nest](#reset-google-nest)
-   * [Use Amazon Echo and Alexa](#use-amazon-echo-and-alexa)
+   * [Use Android Phone and Echo V4](#use-android-phone-and-echo-v4)
    * [Factory Reset Night Light](#factory-reset-night-light)
+* [Questions and Answers](#questions-and-answers)
 
 
 
@@ -304,7 +305,7 @@ Press and hold V+V - key simultaneously for 10 seconds
 
 
 
-## Use Amazon Echo and Alexa
+## Use Android Phone and Echo V4
 
 Matter-enabled Amazon Echo devices have built-in software to connect and control Matter smart home devices seamlessly. After a customer sets up an Echo, they can connect their devices by saying, "Alexa, discover my devices", or if you like, by adding the device in the Alexa app as follows: 
 
@@ -349,3 +350,9 @@ Long press the key for about 7s, then release the key
 During the process, the light first turns on and then off
 
 Until the yellow light comes on, indicating that factory reset OK
+
+
+
+# Questions and Answers
+
+If you encounter any inconvenience in using our night light products, please refer to <a href="https://github.com/thirdreality/nightlight_mt/docs_3r/FAQ/FAQ_3R.md">FAQ</a> for help.
