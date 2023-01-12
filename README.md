@@ -301,7 +301,9 @@ Add a night light in Google Home, just like adding a night light in Apple Home a
 
 If the device has been used before, you can factory reset it as follows:
 
-Press and hold V+V - key simultaneously for 10 seconds
+On the back of the Nest, press Volume Up and Volume Down simultaneously for 10 seconds.
+
+*(when pressing and holding, a message should appear on the screen telling you about the reset)*
 
 
 
