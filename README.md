@@ -129,7 +129,7 @@ If this script says the environment is out of date, it can be updated by running
 
 ## Compile BL602 ( main branch)
 
-`./scripts/build/build_examples.py --target bouffalolab-bl602-iot-matter-v1-light build`
+`./scripts/build/build_examples.py --target bouffalolab-bl602-night-light-light build`
 
 ## Compile BL706 ( main branch)
 
