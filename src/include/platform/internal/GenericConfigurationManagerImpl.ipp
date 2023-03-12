@@ -491,7 +491,8 @@ CHIP_ERROR GenericConfigurationManagerImpl<ImplClass>::StoreBootReason(uint32_t 
 template <class ConfigClass>
 CHIP_ERROR GenericConfigurationManagerImpl<ConfigClass>::GetPartNumber(char * buf, size_t bufSize)
 {
-    return CHIP_ERROR_UNSUPPORTED_CHIP_FEATURE;
+    strcpy(buf, CHIP_DEVICE_CONFIG_DEVICE_PART_NUMBER);
+    return CHIP_NO_ERROR;
 }
 
 template <class ConfigClass>
@@ -696,6 +697,12 @@ void GenericConfigurationManagerImpl<ConfigClass>::LogDeviceConfig()
             productId = 0;
         }
         ChipLogProgress(DeviceLayer, "  Product Id: %u (0x%X)", productId, productId);
+    }
+
+    {
+        char pnbuf[32] = {0};
+        err = GetPartNumber(pnbuf, sizeof(pnbuf));
+        ChipLogProgress(DeviceLayer, "  Part Number: %s", (err == CHIP_NO_ERROR) ? pnbuf : "(not set)");
     }
 
     {

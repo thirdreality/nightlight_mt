@@ -73,6 +73,7 @@ extern uint16_t discriminator_mac_g;
  * 0x8005: example lighting app
  */
 #define CHIP_DEVICE_CONFIG_DEVICE_PRODUCT_ID 0x8005
+#define CHIP_DEVICE_CONFIG_DEVICE_PART_NUMBER "1001"
 
 /**
  * CHIP_DEVICE_CONFIG_DEVICE_PRODUCT_REVISION
