@@ -311,7 +311,7 @@ select and tap Matter-enabled device, then enter next screen, Scan Matter QR cod
 
 Connect this device to your Google Account, tap "I agree" On the bottom right screen, then Connecting device to Google Home...
 
-Wait a moment when you see "Device connected", then tap Done, in your home you can find 3 new devices, you can select a device to change its name in the settings (tap Gear icon in the upper right corner)
+Wait a moment when you see "Device connected", then tap Done, in your home you can find a new device, you can change its name in the settings (tap Gear icon in the upper right corner)
 
 
 ### Reset Google Nest
