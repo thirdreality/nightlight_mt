@@ -273,13 +273,14 @@ A mobile phone or tablet that:
 
 *An Internet connection and secure wireless network*
 
+
 ### Set up Google Nest
 
 Open the Google Home app (upgrade to the latest version first) on your mobile phone
 
 Recommended to set Google Nest as the first device
 
-Tap to select Devices enter the settings screen
+Tap "Devices" on the "Settings" screen
 
 Tap the + Add icon, Set up a device (set up a new device or add an existing device or service to your home)
 
@@ -293,9 +294,25 @@ Tab Connect when "Connect to device"  box pops up
 
 Complete the setting of Google Nest
 
+
 ### Add a Night Light in Home
 
-Add a night light in Google Home, just like adding a night light in Apple Home above.
+Similar to adding Google Nest above, you can add a night light in Google Home as follows:
+
+Tap "Devices" on the "Settings" screen
+
+Tap the + Add icon, Set up a device (set up a new device or add an existing device or service to your home)
+
+Choose "New device" item, Choose a home on next screen, then tap Next, Enter Looking for devices...
+
+on next screen, What are you setting up?
+
+select and tap Matter-enabled device, then enter next screen, Scan Matter QR code
+
+Connect this device to your Google Account, tap "I agree" On the bottom right screen, then Connecting device to Google Home...
+
+Wait a moment when you see "Device connected", then tap Done, in your home you can find 3 new devices, you can select a device to change its name in the settings (tap Gear icon in the upper right corner)
+
 
 ### Reset Google Nest
 
