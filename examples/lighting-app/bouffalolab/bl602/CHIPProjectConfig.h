@@ -38,6 +38,7 @@
  */
 #include <stdint.h>
 extern uint16_t discriminator_mac_g;
+extern uint8_t sn_mac_g[13];
 #define DISCRIMINATOR_MAC (discriminator_mac_g-1)
 #define CHIP_DEVICE_CONFIG_ENABLE_TEST_DEVICE_IDENTITY 34
 
@@ -147,7 +148,8 @@ extern uint16_t discriminator_mac_g;
  * Enables the use of a hard-coded default serial number if none
  * is found in Chip NV storage.
  */
-#define CHIP_DEVICE_CONFIG_TEST_SERIAL_NUMBER "TEST_SN"
+// #define CHIP_DEVICE_CONFIG_TEST_SERIAL_NUMBER "TEST_SN"
+#define CHIP_DEVICE_CONFIG_TEST_SERIAL_NUMBER sn_mac_g
 
 /**
  * CHIP_DEVICE_CONFIG_EVENT_LOGGING_DEBUG_BUFFER_SIZE

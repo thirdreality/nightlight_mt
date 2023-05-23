@@ -331,6 +331,7 @@ extern "C" void app_init(void)
 }
 
 uint16_t discriminator_mac_g;
+uint8_t sn_mac_g[13];
 
 extern "C" void get_mac_init(void)
 {
@@ -345,6 +346,14 @@ extern "C" void get_mac_init(void)
     bl_wireless_mac_addr_get(mac);
 #endif
     ChipLogProgress(NotSpecified, " get MAC #### %02X:%02X:%02X:%02X:%02X:%02X ####\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+    strncpy(sn_mac_g, mac, 6);
+    itoa(mac[0],sn_mac_g,16);
+    itoa(mac[1],sn_mac_g+2,16);
+    itoa(mac[2],sn_mac_g+4,16);
+    itoa(mac[3],sn_mac_g+6,16);
+    itoa(mac[4],sn_mac_g+8,16);
+    itoa(mac[5],sn_mac_g+10,16);
+    sn_mac_g[12] = 0;
 
     setup_pin_code_mac_g = (((mac[0] << 8) + mac[1]) ^ ((mac[1] << 8) + mac[2])) & 0x7FFF;
     setup_pin_code_mac_g <<= 12;
